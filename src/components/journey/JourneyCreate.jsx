@@ -96,17 +96,44 @@ const JourneyCreate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let finnalData = {
+
+    // Validation checks
+    if (launchInfo === null || !launchInfo.launchName) {
+      alert('Launch Name is required!');
+      return;
+    }
+    if (launchInfo === null || !launchInfo.launchId) {
+      alert('Launch ID is required!');
+      return;
+    }
+    if (!start) {
+      alert('Location is required!');
+      return;
+    }
+    if (!end) {
+      alert('Location is required!');
+      return;
+    }
+    if (!startTime) {
+      alert('Start time is required!');
+      return;
+    }
+
+    // Prepare final data
+    const finalData = {
       launchName: launchInfo.launchName,
       launchId: launchInfo.launchId,
       startTime: convertTo12HourFormat(startTime),
       fullDate: new Date(),
-      jrCretorId: '',
-      start: start,
-      end: end,
+      journyCretorId: '', // Add appropriate value if needed
+      startDestination: start,
+      endDestination: end,
       destinationMsg: `${start} to ${end}`,
     };
-    console.log('finl', finnalData);
+
+    console.log('Final Data:', finalData);
+
+    // Optionally handle form submission or API call here
   };
 
   return (
