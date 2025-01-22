@@ -138,7 +138,7 @@ const JourneyCreate = () => {
 
   return (
     <div>
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="mt-3 sm:mx-auto sm:w-full sm:max-w-sm">
         <form
           className="space-y-6 border border-red-900 rounded-md p-3"
           onSubmit={handleSubmit}
