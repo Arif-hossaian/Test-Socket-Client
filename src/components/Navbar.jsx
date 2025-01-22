@@ -61,7 +61,7 @@ const Navbar = () => {
     setUnreadCount(0); // Reset unread count
   };
 
-  console.log('notifications', notifications);
+  //console.log('notifications', notifications);
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
